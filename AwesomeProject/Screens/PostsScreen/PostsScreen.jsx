@@ -14,6 +14,7 @@ const PostsScreen = () => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.title}>Публікації</Text>
+        <AntDesign name="logout" size={24} color="black" />
       </View>
       <View style={styles.content}></View>
       <View style={styles.footer}>
