@@ -8,60 +8,50 @@ import {
   Pressable,
 } from "react-native";
 import Bg from "../../Images/photoBG.jpg";
+import { gStyle } from "../../styles/styles";
 
 const LoginScreen = () => {
-
   return (
-    <View style={styles.container}>
-      <ImageBackground source={Bg} resizeMode="cover" style={styles.imageBg}>
+    <View style={gStyle.container}>
+      <ImageBackground source={Bg} resizeMode="cover" style={gStyle.imageBg}>
         <View style={styles.containerForm}>
-            <Text style={styles.titleText}>Увійти</Text>
-            <TextInput
-              style={styles.input}
-              email
-              // onChangeText={onChangeText}
-              placeholder="Адреса електронної пошти"
-            />
-            <TextInput
-              style={styles.input}
-              current-password
-              // onChangeText={onChangeText}
-              placeholder="Пароль"
-            />
+          <Text style={styles.titleText}>Увійти</Text>
+          <TextInput
+            style={styles.input}
+            email
+            // onChangeText={onChangeText}
+            placeholder="Адреса електронної пошти"
+          />
+          <TextInput
+            style={styles.input}
+            current-password
+            // onChangeText={onChangeText}
+            placeholder="Пароль"
+          />
 
-            <Pressable
-              style={styles.button}
-              onPress={() => Alert.alert("Simple Button pressed")}
-            >
-              <Text style={styles.buttonText}>Увійти</Text>
-            </Pressable>
+          <Pressable
+            style={styles.button}
+            onPress={() => Alert.alert("Simple Button pressed")}
+          >
+            <Text style={styles.buttonText}>Увійти</Text>
+          </Pressable>
 
-            <Pressable
-              style={styles.buttonLink}
-              onPress={() => Alert.alert("Simple Button pressed")}
-            >
-              <Text style={styles.buttonLinkText}>Немає акаунту? Зареєструватися</Text>
-            </Pressable>
-          </View>
+          <Pressable
+            style={styles.buttonLink}
+            onPress={() => Alert.alert("Simple Button pressed")}
+          >
+            <Text style={styles.buttonLinkText}>
+              Немає акаунту? Зареєструватися
+            </Text>
+          </Pressable>
+        </View>
       </ImageBackground>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-
-  imageBg: {
-    flex: 1,
-    justifyContent: "flex-end",
-    width: null,
-    height: null,
-  },
-
   containerForm: {
-    // flex: 0.6,
     paddingHorizontal: 15,
     backgroundColor: "#fff",
     width: "100%",
@@ -74,15 +64,14 @@ const styles = StyleSheet.create({
     color: "#212121",
     fontSize: 42,
     lineHeight: 35,
-    fontWeight: "bold",
     textAlign: "center",
-    fontFamily: "Roboto",
+    fontFamily: "roboto-b",
     fontStyle: "normal",
     fontWeight: 500,
     fontSize: 30,
     textAlign: "center",
     letterSpacing: 0.01,
-    marginTop:32,
+    marginTop: 32,
     marginBottom: 33,
   },
 
@@ -91,27 +80,34 @@ const styles = StyleSheet.create({
     borderColor: "#E8E8E8",
     borderRadius: 8,
     height: 50,
+    alignItems: "center",
     width: "100%",
     marginBottom: 16,
     borderWidth: 1,
     padding: 10,
+    fontSize: 16,
+    color: "#BDBDBD",
+    fontFamily: "roboto",
   },
 
   button: {
     marginTop: 27,
     alignItems: "center",
     backgroundColor: "#FF6C00",
-    padding: 10,
-    borderRadius: 43,
+    padding: 15,
+    borderRadius: 100,
     color: "#1B4371",
     width: "100%",
     height: 51,
     marginBottom: 16,
+    fontSize: 16,
+    fontFamily: "roboto",
   },
 
   buttonText: {
     color: "#fff",
     fontSize: 16,
+    fontFamily: "roboto",
   },
 
   buttonLink: {
@@ -120,6 +116,7 @@ const styles = StyleSheet.create({
   },
 
   buttonLinkText: {
+    fontFamily: "roboto",
     color: "#1B4371",
     fontSize: 16,
   },

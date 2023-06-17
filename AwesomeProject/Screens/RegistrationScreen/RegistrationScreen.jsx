@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   StyleSheet,
   ImageBackground,
@@ -7,24 +8,16 @@ import {
   View,
   Image,
   Pressable,
-  Button,
   Alert,
 } from "react-native";
 import Bg from "../../Images/photoBG.jpg";
 import Icon from "react-native-vector-icons/AntDesign";
+import { gStyle } from "../../styles/styles";
 
 const RegistrationScreen = () => {
-
-  const [userName, setUserName] = useState("");
-  const onChange = (userName) => {
-    setUserName(userName);
-  };
-
-  const handleButtonPress = () => alert("Simple Button pressed");
-
   return (
-    <View style={styles.container}>
-      <ImageBackground source={Bg} resizeMode="cover" style={styles.imageBg}>
+    <View style={gStyle.container}>
+      <ImageBackground source={Bg} resizeMode="cover" style={gStyle.imageBg}>
         <View style={styles.containerForm}>
           <View style={styles.containerCont}>
             <Image style={styles.avatar}></Image>
@@ -32,7 +25,7 @@ const RegistrationScreen = () => {
             <Text style={styles.titleText}>Реєстрація</Text>
             <TextInput
               style={styles.input}
-              onChangeText={onChange}
+              // onChangeText={onChange}
               username
               placeholder="Логін"
             />
@@ -45,25 +38,20 @@ const RegistrationScreen = () => {
               style={styles.input}
               current-password
               placeholder="Пароль"
-            > 
-            <Text style={styles.inputText}>Прказати</Text>
+            >
+              {/* <Text style={styles.inputText}>Показати</Text> */}
             </TextInput>
 
             <Pressable
               style={styles.button}
-              // onPress={() =>
-              //   Alert.alert("Simple Button pressed", "ssssss", [
-              //     { text: "Да", onPress: () => console.log("message") },
-              //     { text: "Нет" },
-              //   ])
-              // }
+              onPress={() => Alert.alert("Simple Button pressed")}
             >
               <Text style={styles.buttonText}>Зареєстуватися</Text>
             </Pressable>
 
             <Pressable
               style={styles.buttonLink}
-              onPress={() => alert("Simple Button pressed")}
+              onPress={() => Alert.alert("Simple Button pressed")}
             >
               <Text style={styles.buttonLinkText}>Вже є акаунт? Увійти</Text>
             </Pressable>
@@ -141,18 +129,18 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     borderWidth: 1,
     padding: 10,
-    
   },
 
   inputText: {
-    position: "relative",
-    fontFamily: 'Roboto',
+    position: "absolute",
+    fontFamily: "Roboto",
     fontStyle: "normal",
     fontWeight: 400,
     fontSize: 16,
     lineHeight: 19,
-    left: 30,
-    top: 30,
+    left: -30,
+    textAlign: "center",
+
     color: "#1B4371",
   },
 
